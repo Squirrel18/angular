@@ -1,9 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="general.js"></script>
     </head>
     <body>
-        
+        <!--<section data-ng-app="" data-ng-init="varInit='valueInit'">
+            <p>Name: <input type="text" data-ng-model="name"></p>
+            <p data-ng-bind="name"></p>
+            <p data-ng-bind="varInit"></p>
+            <p>My first expression: {{ 5 + 5 + " " + name }}</p>
+        </section>-->
+        <section data-ng-app="fisrtApp" data-ng-controller="fisrtAppController" data-ng-init="value1=2;value2=2">
+            <p>Name: <input type="text" data-ng-model="firstName"></p>
+            <p>Surname: <input type="text" data-ng-model="lastName"></p>
+            <p data-ng-model="colorP" style="color: {{ colorP }}">Color by angular expression</p>
+            <p>{{ value1 + value2 }}</p>
+            <p data-ng-bind="value1 + value2"></p>
+            <br>
+            <ul>
+                <li>Title</li>
+                <li data-ng-model="names" ng-repeat="x in names">{{ x }}</li>
+                <li>Title</li>
+            </ul>
+            <input type="text" data-ng-model="inputText">
+            <ul>
+                <li data-ng-model="names" data-ng-repeat="x in names | filter: inputText | orderBy: x">{{ x }}</li>
+            </ul>
+        </section>
     </body>
 </html>
