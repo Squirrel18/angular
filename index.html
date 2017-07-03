@@ -27,6 +27,11 @@
             <ul>
                 <li data-ng-model="names" data-ng-repeat="x in names | filter: inputText | orderBy: x">{{ x }}</li>
             </ul>
+            <form name="formulario">
+                <input type="text"> : texto
+                <input type="submit" value="sub"> 
+            </form>
+            <h1>{{ formulario.$submitted }}</h1>
         </section>
     </body>
 </html>
