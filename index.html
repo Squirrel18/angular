@@ -11,7 +11,7 @@
             <p data-ng-bind="varInit"></p>
             <p>My first expression: {{ 5 + 5 + " " + name }}</p>
         </section>-->
-        <section data-ng-app="fisrtApp" data-ng-controller="fisrtAppController" data-ng-init="value1=2;value2=2">
+        <!--<section data-ng-app="fisrtApp" data-ng-controller="fisrtAppController" data-ng-init="value1=2;value2=2">
             <p>Name: <input type="text" data-ng-model="firstName"></p>
             <p>Surname: <input type="text" data-ng-model="lastName"></p>
             <p data-ng-model="colorP" style="color: {{ colorP }}">Color by angular expression</p>
@@ -32,6 +32,13 @@
                 <input type="submit" value="sub"> 
             </form>
             <h1>{{ formulario.$submitted }}</h1>
+        </section>-->
+        <section data-ng-app="costCalc" data-ng-controller="costCalcController as ctrl">
+            Hours: <input type="number" min="0" data-ng-model="ctrl.hr"><br>
+            Employee: <select name="Employee" data-ng-model="ctrl.employeeSelect">
+                <option data-ng-repeat="x in ctrl.employee.list">{{ x.name }}</option>
+            </select><br>
+            <p>total: {{ ctrl.total(ctrl.employeeSelect) | currency }}</p>
         </section>
     </body>
 </html>
